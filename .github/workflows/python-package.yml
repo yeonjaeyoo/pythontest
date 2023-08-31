@@ -2,7 +2,8 @@ name: Run Scraper - Update data # 워크플로우 이름 지정
 
 on:
   schedule:
-    - cron:  '*/20 * * * *' # 주기적으로 실행하기 위한 스케줄링 - cron 설정
+    -  cron: '0 5 * * 1-5'
+    #- cron:  '*/20 * * * *' # 주기적으로 실행하기 위한 스케줄링 - cron 설정
 
 jobs:
   build:
@@ -22,7 +23,7 @@ jobs:
         pip install -r requirements.txt
     - name: Run Scraper with python
       run: |
-        python "Scraper.py"
+        python "crawler.py"
     - name: Commits
       run: |
         git config --local user.email "yyj20934@naver.com"
