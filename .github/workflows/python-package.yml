@@ -3,7 +3,14 @@ name: Run Scraper - Update data # 워크플로우 이름 지정
 on:
   schedule:
     -  cron: '0 5 * * 1-5'
-    #- cron:  '*/20 * * * *' # 주기적으로 실행하기 위한 스케줄링 - cron 설정
+  workflow_dispatch:
+      inputs:
+         logLevel:
+            description: 'Log level'     
+            required: true
+            default: 'warning'
+         tags:
+            description: 'Test scenario tags'
 
 jobs:
   build:
