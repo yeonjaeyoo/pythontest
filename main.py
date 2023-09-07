@@ -19,6 +19,7 @@ if __name__ == "__main__":
     
     issue_title = f"YES24 IT 신간 도서 알림({today_date})"
     upload_contents = extract_book_data(soup)
+    print("upload_contents="+upload_contents)
     #repo = get_github_repo(access_token, repository_name)
     #upload_github_issue(repo, issue_title, upload_contents)
     print("Upload Github Issue Success!")
